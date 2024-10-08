@@ -1,33 +1,26 @@
-import math
+chosen_lambda = input("Which lambda function (1, 2, 3): ", )
+array_of_numbers = []
 
-def startMenu ():
-    print("Choose from following options:")
-    print("1. Square root of the number.")
-    print("2. Logarithm.")
-    print("3. Exponentiation of Euler's number.")
+array_index = int(input("Enter number of elements: "))
+
+for i in range(0, array_index):
+    ele = int(input("Enter your numbers one by one: "))
+    array_of_numbers.append(ele)
 
 
-def calculator():
-       startMenu()
-       inputValue = input("Choose the options [1/2/3]: ", )
+def modify_list(array, selection):
+    lambda_function_1 = lambda x: max(x)
+    lambda_function_2 = lambda x: min(x)
+    lambda_function_3 = lambda x: 0 in x
 
-       if inputValue == "1":
-           sqrt = input("Enter the number (Remember it should be higher than 0!): ")
+    if selection == "1":
+        array.append(lambda_function_1(array))
+        print(array, "1")
+    elif selection == "2":
+        array.append(lambda_function_2(array))
+        print(array, "2")
+    elif selection == "3":
+        print(array, lambda_function_3(array))
+    
 
-           if int(sqrt) < 0:
-                print("Error: The number is lower than 0!!!")
-           else:
-                print("result: ", math.sqrt(int(sqrt)))
-       elif inputValue == "2":
-           argument = input("Enter the argument: ")
-           base = input("Enter the base: ")
-           print(math.log(int(argument), int(base)))
-       elif inputValue == "3":
-           exponent = input("Enter the exponent value: ")
-           print(math.exp(int(exponent)))
-       else:
-            print("Choose the right option!!!")
-           
-   
-calculator() 
-
+modify_list(array_of_numbers, chosen_lambda)
