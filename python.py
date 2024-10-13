@@ -1,31 +1,27 @@
-array_of_numbers = []
+import random
 
-array_index = int(input("Enter number of elements: "))
+randomNumber = random.randint(1, 100)
+print(randomNumber)
 
-for i in range(0, array_index):
-    ele = int(input("Enter your numbers one by one: "))
-    array_of_numbers.append(ele)
+guessedNumbers = []
 
+isGameEnded = True
 
-def find2max(list):
-    array_item_number = len(list)
-    if (array_item_number%2) == 0:
+def game(value):
+    number = int(input("Guess a number between 1 and 10: ", ))
+    if value == number:
+        global isGameEnded
+        isGameEnded = False
+        guessedNumbers.append(number)
+        print(guessedNumbers)
+        print(f"Correct! You found the number in {len(guessedNumbers)} guesses.")
+    elif number < value:
+        guessedNumbers.append(number)
+        print("Too low!")
+    elif number > value:
+        guessedNumbers.append(number)
+        print("Too high!")
 
-        total = array_item_number//2
+while isGameEnded:
+    game(randomNumber)
 
-        first_half = array_of_numbers[total:]
-        second_half = array_of_numbers[:total]
-
-        first_half.sort()
-        second_half.sort()
-
-        maximum_value_of_first_half = first_half[-1]
-        maximum_value_of_second_half = second_half[-1]
-
-        print(f"{maximum_value_of_second_half, maximum_value_of_first_half}")
-
-
-    else:
-        print("Wrong input")
-
-find2max(array_of_numbers)
