@@ -1,5 +1,7 @@
-inputWord = input("enter your word: ", )
+#inputWord = input("enter your word: ", )
 
-reversedWord = inputWord[::-1]
-# List[start:end:step]
-print(reversedWord)
+string = input("Enter your f in word: ", )
+
+lst = string.split()
+
+print(len(lst))
