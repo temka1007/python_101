@@ -1,11 +1,12 @@
-isPrime = int(input("Enter your number to check if it is prime number or not: ", ))
 
-for number in range(2, isPrime): 
-    value = isPrime/number
-    if value.is_integer():
-        print("Not prime number!!!")
-        break
-    elif isPrime == number+1:
-        print("Prime number!!!")
-        
-        
+def my_map(func, lst):
+    result = []
+    for element in lst:
+        result.append(func(element))
+
+    return result
+
+
+numbers = [2, 3, 4, 5, 6, 7, 8, 9]
+
+print(my_map(lambda x: x**2, numbers))
