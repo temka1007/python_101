@@ -1,8 +1,5 @@
-def print_pyramid(n):
-    for x in range(1, n+1):
-        print("*" * x)
-        
+n = eval(input("Enter your list: ", ))
 
-param = int(input())
+evenNumbers = [x**2 for x in n if x%2 == 0]
 
-print_pyramid(param)
+print(evenNumbers)
