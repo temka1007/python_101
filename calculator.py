@@ -1,14 +1,9 @@
-targetSum = int(input("Target sum: ", ))
 lst = eval(input("List: ", ))
 
-counter = 0
+copyLst = lst.copy()
 
-for number in lst:
-    for innerNumber in lst:
-        total = number + innerNumber
-        if total == 10:
-            lst.remove(number)
-            lst.remove(innerNumber)
-            counter += 1
+biggest = max(copyLst)
 
-print(counter)
+while biggest in copyLst: copyLst.remove(biggest)
+
+print(max(copyLst))
