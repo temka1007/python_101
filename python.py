@@ -1,12 +1,7 @@
+lengthOfList = int(input("how many number supposed to be in here?: ", ))
+lst = eval(input("Give your list as follows [a, b, c etc.]: ", ))
 
-def my_map(func, lst):
-    result = []
-    for element in lst:
-        result.append(func(element))
-
-    return result
-
-
-numbers = [2, 3, 4, 5, 6, 7, 8, 9]
-
-print(my_map(lambda x: x**2, numbers))
+if lengthOfList == len(lst)-1:
+    print("yes")
+else: 
+    print("no")
