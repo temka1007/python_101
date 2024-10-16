@@ -1,5 +1,14 @@
-n = eval(input("Enter your list: ", ))
+targetSum = int(input("Target sum: ", ))
+lst = eval(input("List: ", ))
 
-evenNumbers = [x**2 for x in n if x%2 == 0]
+counter = 0
 
-print(evenNumbers)
+for number in lst:
+    for innerNumber in lst:
+        total = number + innerNumber
+        if total == 10:
+            lst.remove(number)
+            lst.remove(innerNumber)
+            counter += 1
+
+print(counter)
