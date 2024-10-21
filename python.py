@@ -1,12 +1,7 @@
-lengthOfList = int(input("how many number supposed to be in here?: ", ))
-lst = eval(input("Give your list as follows [a, b, c etc.]: ", ))
+def square_digits(num):
+    square = [int(x)*int(x) for x in str(num)]
+    result = "".join(str(x) for x in square)
+    return int(result)
 
-if lengthOfList == len(lst)+1:
-    for index, element in enumerate(lst, start=1):
-        if index != element:
-            print(index)
-            
-else: 
-    print("List length is not matching!")
 
-    
+print(square_digits(9119))
