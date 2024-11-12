@@ -1,14 +1,15 @@
-def spin_words(sentence):
-    lst = sentence.split(" ")
-    count = 0
-    for word in lst:
-        if len(word) >= 5:
-            print(True)
-            lst[count] = lst[count][::-1]
-        count += 1
-    return " ".join(lst)
+def likes(names):
+    if len(names) == 0: return "no one likes this"
+    if len(names) == 1: return f"{names[0]} likes this"
+    if len(names) == 2: return f"{names[0]} and {names[1]} like this"
+    if len(names) == 3: return f"{names[0]}, {names[1]} and {names[2]} like this"
+    if len(names) == 4: return f"{names[0]}, {names[1]} and {len(names) - 1} like this"
 
 
-test = "Hey fellow warriors"
 
-print(spin_words(test))
+
+
+test = ["Max", "John", "Mark"]
+
+
+print(likes(test))
