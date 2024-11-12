@@ -1,15 +1,13 @@
-def likes(names):
-    if len(names) == 0: return "no one likes this"
-    if len(names) == 1: return f"{names[0]} likes this"
-    if len(names) == 2: return f"{names[0]} and {names[1]} like this"
-    if len(names) == 3: return f"{names[0]}, {names[1]} and {names[2]} like this"
-    if len(names) == 4: return f"{names[0]}, {names[1]} and {len(names) - 1} like this"
+def find_it(seq):
+    unique = set(seq)
+    tracker: dict = {}
+    for item in list(unique):
+        tracker[item] = len([x for x in seq if x == item])
+    print(tracker)
+    for key, value in tracker.items():
+        if value%2 == 1:
+            return key
 
+test = [20,1,1,2,2,3,3,5,5,4,20,4,5]
 
-
-
-
-test = ["Max", "John", "Mark"]
-
-
-print(likes(test))
+print(find_it(test))
