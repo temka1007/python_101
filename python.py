@@ -1,7 +1,10 @@
-def array_diff(a, b):
-    return [num for num in a if num not in b]
+def digital_root(n):
+    number = n
+    while len(str(number)) > 1:
+        intLst = [int(x) for x in str(number)]
+        number = sum(intLst)
+    return number
 
-test_1 = [1,2,2,2,3]
-test_2 = [2]
+test = 493193
 
-print(array_diff(test_1, test_2))
+print(digital_root(test))
