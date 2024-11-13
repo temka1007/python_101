@@ -1,3 +1,1 @@
-lst = 5398583
-no = list(str(lst))
-print(len(lst))
+lst = [1, 22, 3    , 3 , 3333 ,    3]
