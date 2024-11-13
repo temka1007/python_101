@@ -1,10 +1,7 @@
-def digital_root(n):
-    number = n
-    while len(str(number)) > 1:
-        intLst = [int(x) for x in str(number)]
-        number = sum(intLst)
-    return number
+def create_phone_number(n):
+    a = "".join(str(x) for x in n)
+    return f"({a[0:3]}) {a[3:6]}-{a[6::]}"
 
-test = 493193
+test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
-print(digital_root(test))
+print(create_phone_number(test))
