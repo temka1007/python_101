@@ -1,13 +1,7 @@
-def find_it(seq):
-    unique = set(seq)
-    tracker: dict = {}
-    for item in list(unique):
-        tracker[item] = len([x for x in seq if x == item])
-    print(tracker)
-    for key, value in tracker.items():
-        if value%2 == 1:
-            return key
+def array_diff(a, b):
+    return [num for num in a if num not in b]
 
-test = [20,1,1,2,2,3,3,5,5,4,20,4,5]
+test_1 = [1,2,2,2,3]
+test_2 = [2]
 
-print(find_it(test))
+print(array_diff(test_1, test_2))
