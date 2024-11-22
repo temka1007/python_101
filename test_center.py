@@ -1,7 +1,18 @@
-def create_phone_number(n: list[int]) -> str:
-    a = "".join(str(x) for x in n)
-    return f"({a[0:3]}) {a[3:6]}-{a[6:]}"
+def binary_search_recursive(arr, target, left, right):
+    if left > right:
+        return -1
+
+    midpoint_index = (left + right) // 2
+
+    if arr[midpoint_index] == target:
+        return midpoint_index
+    elif arr[midpoint_index] < target:
+        return binary_search_recursive(arr, target, midpoint_index + 1, right)
+    else:
+        return binary_search_recursive(arr, target, left, midpoint_index - 1)
 
 
-test: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-print(create_phone_number(test))
+arr = [2, 4, 6, 8, 10, 12, 14, 16]
+target = 14
+result = binary_search_recursive(arr, target, 0, len(arr) - 1)
+print(f"Index of {target}: {result}")
