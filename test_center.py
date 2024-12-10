@@ -1,18 +1,17 @@
-def frequency_counter(lst):
-    def frequency(item, lst):
-        total = 0
-        for current in lst:
-            if item == current:
-                total += 1
-        return total
+def subsets_of_set(lst, distance=1):
+    if lst == []:
+        return lst
+    arr = []
+    if distance > len(lst):
+        return arr
+    else:
+        print("working")
+        for n in range(len(lst) - (distance - 1)):
+            arr.append(lst[n : n + distance])
+        distance += 1
+        return arr + subsets_of_set(lst, distance)
 
-    sentence = lst.split(" ")
-    new_dict = {item: frequency(item, sentence) for item in sentence}
-    return new_dict
 
+test = ["a", "b", "c"]
 
-test = input(
-    "Enter your sentence! ",
-).lower()
-
-print(frequency_counter(test))
+print(subsets_of_set(test))
