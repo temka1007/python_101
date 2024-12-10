@@ -1,11 +1,16 @@
-def kth_finder(kth, lst):
-    sortedLst = sorted(lst)
-    print(sortedLst)
-    if kth > len(lst):
-        return "Given index is larger than list length"
-    else:
-        return sortedLst[kth - 1]
+def frequency_counter(lst):
+    def frequency(item, lst):
+        total = 0
+        for current in lst:
+            if item == current:
+                total += 1
+        return total
+
+    sentence = lst.split(" ")
+    new_dict = {item: frequency(item, sentence) for item in sentence}
+    return new_dict
 
 
-arr = [7, 10, 4, 3, 20, 15]
-print(kth_finder(8, arr))
+test = input("Enter your sentence! ")
+
+print(frequency_counter(test))
