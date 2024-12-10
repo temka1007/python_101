@@ -11,6 +11,8 @@ def frequency_counter(lst):
     return new_dict
 
 
-test = input("Enter your sentence! ")
+test = input(
+    "Enter your sentence! ",
+).lower()
 
 print(frequency_counter(test))
