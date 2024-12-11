@@ -1,5 +1,15 @@
-squares = {x: x**2 for x in range(10) if x % 2 == 0}
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
 
-lst = [x**2 for x in range(5)]
+    pivot = arr[0]
 
-print(squares, lst)
+    left = [x for x in arr[1:] if pivot > x]
+    right = [x for x in arr[1:] if pivot <= x]
+
+    return quicksort(left) + [pivot] + quicksort(right)
+
+
+test = [4, 3, 2, 7, 7, 6, 1, 5, 9, 7, 8, 10, 11]
+
+print(quicksort(test))
